@@ -1,0 +1,344 @@
+## Sample initialization file for GNU nano.
+##
+## Please note that you must have configured nano with --enable-nanorc
+## for this file to be read!  Also note that this file should not be in
+## DOS or Mac format, and that characters specially interpreted by the
+## shell should not be escaped here.
+##
+## To make sure a value is disabled, use "unset <option>".
+##
+## For the options that take parameters, the default value is given.
+## Other options are unset by default.
+##
+## Quotes inside string parameters don't have to be escaped with
+## backslashes.  The last double quote in the string will be treated as
+## its end.  For example, for the "brackets" option, ""')>]}" will match
+## ", ', ), >, ], and }.
+
+## Use auto-indentation.
+set autoindent
+
+## Backup files to filename~.
+# set backup
+
+## The directory to put unique backup files in.
+# set backupdir ""
+
+## Do backwards searches by default.
+# set backwards
+
+## Use bold text instead of reverse video text.
+set boldtext
+
+## The characters treated as closing brackets when justifying
+## paragraphs.  They cannot contain blank characters.  Only closing
+## punctuation, optionally followed by closing brackets, can end
+## sentences.
+##
+# set brackets ""')>]}"
+
+## Do case sensitive searches by default.
+# set casesensitive
+
+## Constantly display the cursor position in the statusbar.  Note that
+## this overrides "quickblank".
+# set const
+
+## Use cut to end of line by default.
+# set cut
+
+## Set the line length for wrapping text and justifying paragraphs.
+## If fill is 0 or less, the line length will be the screen width less
+## this number.
+##
+# set fill -8
+
+## Enable ~/.nano_history for saving and reading search/replace strings.
+# set historylog
+
+## The opening and closing brackets that can be found by bracket
+## searches.  They cannot contain blank characters.  The former set must
+## come before the latter set, and both must be in the same order.
+##
+set matchbrackets "(<[{)>]}"
+
+## Use the blank line below the titlebar as extra editing space.
+# set morespace
+
+## Enable mouse support, if available for your system.  When enabled,
+## mouse clicks can be used to place the cursor, set the mark (with a
+## double click), and execute shortcuts.  The mouse will work in the X
+## Window System, and on the console when gpm is running.
+##
+set mouse
+
+## Allow multiple file buffers (inserting a file will put it into a
+## separate buffer).  You must have configured with --enable-multibuffer
+## for this to work.
+##
+# set multibuffer
+
+## Don't convert files from DOS/Mac format.
+# set noconvert
+
+## Don't follow symlinks when writing files.
+# set nofollow
+
+## Don't display the helpful shortcut lists at the bottom of the screen.
+# set nohelp
+
+## Don't add newlines to the ends of files.
+# set nonewlines
+
+## Don't wrap text at all.
+set nowrap
+
+## Set operating directory.  nano will not read or write files outside
+## this directory and its subdirectories.  Also, the current directory
+## is changed to here, so any files are inserted from this dir.  A blank
+## string means the operating directory feature is turned off.
+##
+# set operatingdir ""
+
+## Preserve the XON and XOFF keys (^Q and ^S).
+# set preserve
+
+## The characters treated as closing punctuation when justifying
+## paragraphs.  They cannot contain blank characters.  Only closing
+## punctuation, optionally followed by closing brackets, can end
+## sentences.
+##
+# set punct "!.?"
+
+## Do quick statusbar blanking.  Statusbar messages will disappear after
+## 1 keystroke instead of 26.  Note that "const" overrides this.
+##
+# set quickblank
+
+## The email-quote string, used to justify email-quoted paragraphs.
+## This is an extended regular expression if your system supports them,
+## otherwise a literal string.  Default:
+# set quotestr "^([ 	]*[#:>\|}])+"
+## if you have extended regular expression support, otherwise:
+# set quotestr "> "
+
+## Fix Backspace/Delete confusion problem.
+# set rebinddelete
+
+## Fix numeric keypad key confusion problem.
+# set rebindkeypad
+
+## Do extended regular expression searches by default.
+# set regexp
+
+## Make the Home key smarter.  When Home is pressed anywhere but at the
+## very beginning of non-whitespace characters on a line, the cursor
+## will jump to that beginning (either forwards or backwards).  If the
+## cursor is already at that position, it will jump to the true
+## beginning of the line.
+# set smarthome
+
+## Use smooth scrolling as the default.
+# set smooth
+
+## Use this spelling checker instead of the internal one.  This option
+## does not properly have a default value.
+##
+# set speller "aspell -x -c"
+
+## Allow nano to be suspended.
+# set suspend
+
+## Use this tab size instead of the default; it must be greater than 0.
+# set tabsize 8
+
+## Convert typed tabs to spaces.
+# set tabstospaces
+
+## Save automatically on exit, don't prompt.
+# set tempfile
+
+## Disallow file modification; why would you want this in an rcfile? ;)
+# set view
+
+## The two single-column characters used to display the first characters
+## of tabs and spaces.  187 in ISO 8859-1 (0000BB in Unicode) and 183 in
+## ISO-8859-1 (0000B7 in Unicode) seem to be good values for these.
+# set whitespace "  "
+
+## Detect word boundaries more accurately by treating punctuation
+## characters as part of a word.
+# set wordbounds
+
+
+## Color setup
+##
+## Format:
+##
+## syntax "short description" ["filename regex" ...]
+##
+## The "none" syntax is reserved; specifying it on the command line is
+## the same as not having a syntax at all.  The "default" syntax is
+## special: it takes no filename regexes, and applies to files that
+## don't match any other syntax's filename regexes.
+##
+## color foreground,background "regex" ["regex"...]
+## or
+## icolor foreground,background "regex" ["regex"...]
+##
+## "color" will do case sensitive matches, while "icolor" will do case
+## insensitive matches.
+##
+## Valid colors: white, black, red, blue, green, yellow, magenta, cyan.
+## For foreground colors, you may use the prefix "bright" to get a
+## stronger highlight.
+##
+## To use multi-line regexes, use the start="regex" end="regex"
+## [start="regex" end="regex"...] format.
+##
+## If your system supports transparency, not specifying a background
+## color will use a transparent color.  If you don't want this, be sure
+## to set the background color to black or white.
+##
+## If you wish, you may put your syntaxes in separate files.  You can
+## make use of such files (which can only include "syntax", "color", and
+## "icolor" commands) as follows:
+##
+## include "/path/to/syntax_file.nanorc"
+##
+## Unless otherwise noted, the name of the syntax file (without the
+## ".nanorc" extension) should be the same as the "short description"
+## name inside that file.  These names are kept fairly short to make
+## them easier to remember and faster to type using nano's -Y option.
+##
+## All regexes should be extended regular expressions.
+
+## Default - makes ## as comment
+ include "~/.nano/default.nanorc"
+## Emacs
+ include "~/.nano/dotemacs.nanorc"
+## C++
+ include "~/.nano/c.nanorc"
+## C
+ include "~/.nano/c-file.nanorc"
+## Pov-Ray
+ include "~/.nano/pov.nanorc"
+## HTML
+#there is better one in xml.nanorc
+# include "~/.nano/html.nanorc"
+## TeX
+ include "~/.nano/tex.nanorc"
+## Quoted emails (under e.g. mutt)
+ include "~/.nano/mutt.nanorc"
+## Patch files
+ include "~/.nano/patch.nanorc"
+## Manpages
+ include "~/.nano/man.nanorc"
+## Groff
+ include "~/.nano/groff.nanorc"
+## Perl
+ include "~/.nano/perl.nanorc"
+## Python
+ include "~/.nano/python.nanorc"
+## Ruby
+ include "~/.nano/ruby.nanorc"
+## Java
+ include "~/.nano/java.nanorc"
+## Assembler
+ include "~/.nano/asm.nanorc"
+## Bourne shell scripts
+ include "~/.nano/sh.nanorc"
+## Gentoo ebuilds and such
+# include "~/.nano/gentoo.nanorc"
+## PHP something missing in there...
+#include "~/.nano/php.nanorc"
+## PHP
+include "~/.nano/php2.nanorc"
+## Xorg config
+include "~/.nano/xorg.nanorc"
+## XML
+include "~/.nano/xml.nanorc"
+## URLS
+include "~/.nano/urls.nanorc"
+## CSS
+include "~/.nano/css.nanorc"
+## Conky
+include "~/.nano/conky.nanorc"
+## .cf
+#include "~/.nano/maincf.nanorc"
+## *rc - catches more files for now
+#include "~/.nano/rcfiles.nanorc"
+## *rc
+include "~/.nano/rcfiles-new.nanorc"
+## profile
+#include "~/.nano/profile.nanorc"
+## java script
+include "~/.nano/js.nanorc"
+## configs
+#include "~/.nano/configfiles.nanorc"
+## Xstuff
+#include "~/.nano/xdefaults.nanorc"
+## configs
+#include "~/.nano/config.nanorc"
+## configs
+#include "~/.nano/config2.nanorc"
+## configs
+include "~/.nano/config3.nanorc"
+## configs
+#include "~/.nano/tab.nanorc"
+## configs
+#include "~/.nano/passwd.nanorc"
+#include "~/.nano/desc.nanorc"
+## Delphi
+include "~/.nano/delphi.nanorc"
+# ChangeLog - colors everything in blue
+#include "~/.nano/changelog.nanorc"
+## ChangeLog		(C)ryszardzonk
+#include "~/.nano/changelogs.nanorc"
+## video metadata info	(C)ryszardzonk
+include "~/.nano/info.nanorc"
+## configs in /etc	(C)ryszardzonk
+#include "~/.nano/etc-stuff.nanorc"
+## logs in /var/log	(C)ryszardzonk
+include "~/.nano/log-stuff.nanorc"
+## nanorc syntax
+include "~/.nano/nanorc.nanorc"
+## *.po files		(C)ryszardzonk
+include "~/.nano/po.nanorc"
+## Apache 2
+include "~/.nano/apache2.nanorc"
+## Apache 2 Virtual Host
+#include "~/.nano/vhost.nanorc"
+## /etc/init.d/*	custom gentoo.nanorc
+#include "~/.nano/initscript.nanorc"
+## Named		(C)ryszardzonk
+include "~/.nano/named.nanorc"
+## File Types		(C)ryszardzonk
+include "~/.nano/mimetype.nanorc"
+## /etc/initng/		custom sh.nanorc
+include "~/.nano/initng.nanorc"
+## /etc/xml         custom xml.nanorc
+#include "~/.nano/etcxml.nanorc"
+## sh.nanorc syntax for custom files
+include "~/.nano/shlike.nanorc"
+## c.nanorc syntax for custom files
+include "~/.nano/clike.nanorc"
+## EKG History view     (C)ryszardzonk  
+#include "~/.nano/ekghistory.nanorc"
+## others		(C)ryszardzonk
+#include "~/.nano/others.nanorc"
+## others		(C)ryszardzonk + LinuxHelp Wiki
+include "~/.nano/makefile.nanorc"
+## postegreSQL
+#include "~/.nano/postgresql.nanorc"
+## Debian Sources (off by default)
+#include "~/.nano/sources_list.nanorc"
+## SoftCam.Key mgcamd
+include "~/.nano/softcam.nanorc"
+## Paludis http://gentoo-wiki.com/TIP_Nano_Context_Highlighting
+include "~/.nano/paludis.nanorc"
+## HAVP config		(C)ryszardzonk
+include "~/.nano/havp.nanorc"
+## Privoxy		(C)ryszardzonk
+#include "~/.nano/privoxy.nanorc"
+
